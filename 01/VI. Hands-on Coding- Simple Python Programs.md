@@ -129,6 +129,3 @@ else:
 * String formatting (`+` and f-strings)
 * Handling basic errors (like dividing by zero)
 
----
-
-**These hands-on exercises reinforce all key Python basics covered in Lesson 1. If you want to add a third challenge or a quiz, just let me know!**
