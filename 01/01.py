@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May 18 17:45:59 2025
-
-@author: tomazkastrun
-"""
 
 # Variables and types
 name = "Alice"
