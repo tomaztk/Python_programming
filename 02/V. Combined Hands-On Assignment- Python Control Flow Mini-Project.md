@@ -131,6 +131,4 @@ while True:
 * Enhance the triangle pattern to be centered or inverted.
 * Add a summary at the end of each loop iteration showing which options have been run.
 
----
 
-**Let me know if you want this as a handout, with additional explanations, or as a ready-to-run script for students!**

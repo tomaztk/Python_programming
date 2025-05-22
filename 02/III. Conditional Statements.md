@@ -272,6 +272,24 @@ options = {1: option_one, 2: option_two, 3: option_three}
 options.get(choice, lambda: print("Invalid option"))()
 ```
 
+More alternatives: https://docs.python.org/3/tutorial/controlflow.html
+
+In Python 3.10 and above, the `match` statement is used for pattern matching (similar to switch-case in other languages). It allows you to compare a value against several patterns and execute code based on which pattern matches.
+
+```python
+fruit = "apple"
+
+match fruit:
+    case "apple":
+        print("It’s an apple!")
+    case "banana":
+        print("It’s a banana!")
+    case "orange":
+        print("It’s an orange!")
+    case _:
+        print("Unknown fruit")
+```
+
 ---
 
 ### **D. Example Program: Check if a Number is Positive, Negative, or Zero**
