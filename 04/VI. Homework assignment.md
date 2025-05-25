@@ -46,5 +46,4 @@ filtered_numbers = [n for n in numbers if n >= 10]
 print("Sorted and filtered list:", filtered_numbers)
 ```
 
----
 
