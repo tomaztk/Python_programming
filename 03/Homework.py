@@ -1,4 +1,6 @@
 balance = 1000
+
+
 while True:
     print("\n1. Check balance\n2. Deposit\n3. Withdraw\n4. Exit")
     choice = input("Choose an option: ")
@@ -20,3 +22,4 @@ while True:
         break
     else:
         print("Invalid choice.")
+
