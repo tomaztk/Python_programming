@@ -1,4 +1,4 @@
-word = "tomaz"
+word = "tomazamot"
 if word == word[::-1]:
     print("Palindrome")
 else:
