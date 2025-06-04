@@ -1,8 +1,4 @@
-## LESSON 7: PYTHON DATA STRUCTURES - PART 2 (Exercise)
-
-### **Solutions**
-
----
+## LESSON 7: PYTHON DATA STRUCTURES - PART 2 (Exercise) - Solution
 
 ### **Dictionaries**
 
@@ -176,6 +172,8 @@ print("Common elements:", common)
 
 ```python
 sentence = input("Enter a sentence: ")
+#remove commas or stops
+sentence = sentence.replace(".", " ")
 words = sentence.lower().split()
 unique_words = set(words)
 print("Unique words:", unique_words)
@@ -189,7 +187,7 @@ print("Unique words:", unique_words)
 sentence = "Python Programming"
 frequency = {}
 for char in sentence.lower():
-    if char != ' ':
+    if char != ' ':  # or we can replace " " with ""
         if char in frequency:
             frequency[char] += 1
         else:
@@ -197,6 +195,4 @@ for char in sentence.lower():
 print(frequency)
 ```
 
----
 
-Let me know if you want explanations, comments in code, or more advanced versions!
