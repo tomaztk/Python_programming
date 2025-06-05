@@ -1,96 +1,109 @@
-### **IV. Introduction to Sets **
+### IV. Introduction to Sets
 
 #### **1. Creating Sets**
 
 A **set** is an unordered collection of unique, immutable elements.
 
-- **Using curly braces:**  
-  ```python
-  nums = {1, 2, 3, 4}
-  ```
-- **Using the set() constructor (especially for lists/strings):**  
-  ```python
-  nums2 = set([3, 4, 5, 6])
-  print(nums, nums2)  # Output: {1, 2, 3, 4} {3, 4, 5, 6}
-  ```
+**Using curly braces:**  
+
+```python
+nums = {1, 2, 3, 4}
+```
+**Using the set() constructor (especially for lists/strings):**  
+
+```python
+nums2 = set([3, 4, 5, 6])
+print(nums, nums2)  # Output: {1, 2, 3, 4} {3, 4, 5, 6}
+```
 
 **Important:**  
-- Empty set: Use `set()`, not `{}` (which makes an empty dictionary).
-  ```python
-  empty_set = set()
-  ```
+
+Empty set: Use `set()`, not `{}` (which makes an empty dictionary).
+
+```python
+empty_set = set()
+```
 
 #### **2. Adding and Removing Elements**
 
-- **Adding an element:**  
-  ```python
-  nums.add(5)
-  print(nums)  # Output: {1, 2, 3, 4, 5}
-  ```
-  - If the element already exists, nothing changes.
+**Adding an element:**  
 
-- **Removing an element:**  
-  ```python
-  nums.remove(1)   # Removes 1, raises error if 1 not found
-  print(nums)
-  nums.discard(10) # Removes 10 if present, does nothing if not (no error)
-  ```
+```python
+nums.add(5)
+print(nums)  # Output: {1, 2, 3, 4, 5}
+```
+ If the element already exists, nothing changes.
 
-- **Remove and return an arbitrary element:**  
-  ```python
-  popped = nums.pop()
-  print("Removed:", popped)
-  ```
+**Removing an element:**  
 
-- **Clear all elements:**  
-  ```python
-  nums.clear()
-  print(nums)  # Output: set()
-  ```
+```python
+nums.remove(1)   # Removes 1, raises error if 1 not found
+print(nums)
+nums.discard(10) # Removes 10 if present, does nothing if not (no error)
+```
+
+**Remove and return an arbitrary element:**  
+
+```python
+popped = nums.pop()
+print("Removed:", popped)
+```
+
+**Clear all elements:**  
+
+```python
+nums.clear()
+print(nums)  # Output: set()
+```
 
 #### **3. Set Operations**
 
 Sets support powerful operations for comparing and combining groups of items:
 
-- **Union:** Elements in either set
-  ```python
-  nums = {2, 3, 4, 5}
-  nums2 = {3, 4, 5, 6}
-  union = nums | nums2
-  print(union)                   # Output: {2, 3, 4, 5, 6}
-  # OR
-  print(nums.union(nums2))
-  ```
+**Union:** Elements in either set
 
-- **Intersection:** Elements in both sets
-  ```python
-  intersection = nums & nums2
-  print(intersection)            # Output: {3, 4, 5}
-  # OR
-  print(nums.intersection(nums2))
-  ```
+```python
+nums = {2, 3, 4, 5}
+nums2 = {3, 4, 5, 6}
+union = nums | nums2
+print(union)                   # Output: {2, 3, 4, 5, 6}
+# OR
+print(nums.union(nums2))
+```
 
-- **Difference:** Elements in the first set but not the second
-  ```python
-  difference = nums - nums2
-  print(difference)              # Output: {2}
-  # OR
-  print(nums.difference(nums2))
-  ```
+**Intersection:** Elements in both sets
 
-- **Symmetric Difference:** Elements in either set, but not both
-  ```python
-  sym_diff = nums ^ nums2
-  print(sym_diff)                # Output: {2, 6}
-  # OR
-  print(nums.symmetric_difference(nums2))
-  ```
+```python
+intersection = nums & nums2
+print(intersection)            # Output: {3, 4, 5}
+# OR
+print(nums.intersection(nums2))
+```
 
-- **Membership test:**  
-  ```python
-  print(3 in nums)    # True if 3 is in nums
-  print(10 in nums)   # False
-  ```
+**Difference:** Elements in the first set but not the second
+
+```python
+difference = nums - nums2
+print(difference)              # Output: {2}
+# OR
+print(nums.difference(nums2))
+```
+
+**Symmetric Difference:** Elements in either set, but not both
+
+```python
+sym_diff = nums ^ nums2
+print(sym_diff)                # Output: {2, 6}
+# OR
+print(nums.symmetric_difference(nums2))
+```
+
+**Membership test:**  
+
+```python
+print(3 in nums)    # True if 3 is in nums
+print(10 in nums)   # False
+```
 
 #### **4. Example: Removing Duplicates from a List**
 
@@ -126,44 +139,36 @@ print(unique_items)  # Output: {1, 2, 3, 4, 5}
 
 #### **6. Real World Examples of Using Sets**
 
-- **Removing Duplicates:**  
-  Get unique email addresses from a mailing list.
-  ```python
+**Removing Duplicates:**  
+ 
+ Get unique email addresses from a mailing list.
+ 
+```python
   emails = ['a@mail.com', 'b@mail.com', 'a@mail.com']
   unique_emails = set(emails)
   print(unique_emails)
-  ```
+```
 
-- **Membership Test:**  
-  Check if a user has admin privileges.
-  ```python
-  admins = {'alice', 'bob'}
-  username = 'charlie'
-  if username in admins:
-      print('Admin')
-  else:
-      print('Not admin')
-  ```
+**Membership Test:**  
+Check if a user has admin privileges.
 
-- **Finding Common/Unique Items:**  
-  Find students in both math and science clubs.
-  ```python
-  math_club = {'Tom', 'Jane', 'Sara'}
-  science_club = {'Sara', 'Alex', 'Jane'}
-  both_clubs = math_club & science_club
-  print(both_clubs)  # Output: {'Jane', 'Sara'}
-  ```
+```python
+admins = {'alice', 'bob'}
+username = 'charlie'
+if username in admins:
+  print('Admin')
+else:
+  print('Not admin')
+```
 
-- **Detecting Overlapping Reservations or Conflicts:**  
-  If two people book a room for overlapping time slots, sets can quickly find overlaps.
+**Finding Common/Unique Items:**  
 
-- **Tags and Recommendations:**  
-  Find common tags between products for recommendations, or suggest unique tags.
+Find students in both math and science clubs.
 
-#### **7. Quick Challenges**
+```python
+math_club = {'Tom', 'Jane', 'Sara'}
+science_club = {'Sara', 'Alex', 'Jane'}
+both_clubs = math_club & science_club
+print(both_clubs)  # Output: {'Jane', 'Sara'}
+```
 
-1. Create a set of five colors, add one new color, and remove another.
-2. Given two sets of friends, print out names only in the first group, only in the second, and in both.
-3. Use a set to check if a word has duplicate letters.
-
----

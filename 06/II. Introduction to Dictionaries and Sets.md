@@ -57,6 +57,12 @@ del my_dict['age']                      # Removes the key 'age'
   ```
 * **Counting Occurrences:** Count how many times each word appears in a sentence.
 
+
+  ```python
+  # This is what it is
+  word_count = {'This': 1, 'is': 2, 'what': 1, 'it': 1}
+  ```
+
 ---
 
 ### What is a Set?
