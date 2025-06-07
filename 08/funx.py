@@ -163,4 +163,18 @@ def print_address(**kwargs) -> None:
         print(f"{key}: {value}")
     print(type(kwargs))  # <class 'dict'>, kwargs is a dictionary
 
-print_address(street="Maroltova 4", city="LJubljana", zip="1000", country="Slovenia")
+print_address(street="Dol 42", city="LJubljana", zip="1000", country="Slovenia")
+
+
+# order of arguments in function definition is crucial:
+# 1. positional arguments
+# 2. *args (variable number of positional arguments)
+# 3. keyword arguments (default arguments)
+def shipping_label(*args, **kwargs):
+    pass
+
+print(shipping_label("Alex", "Castro", 
+                     street="Dol 42", 
+                     city="LJubljana", 
+                     zip="1000", 
+                     country="Slovenia"))
