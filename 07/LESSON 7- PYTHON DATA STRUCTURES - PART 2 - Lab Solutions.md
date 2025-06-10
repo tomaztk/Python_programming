@@ -195,4 +195,34 @@ for char in sentence.lower():
 print(frequency)
 ```
 
+**16. Word Frequency Counter**
 
+```python
+# import string
+s = "Hello hello, world today, Hello"
+s = s.lower()
+# Remove punctuation
+s = s.translate(str.maketrans('', '', string.punctuation))
+words = s.split()
+freq = {}
+for word in words:
+    if word in freq:
+        freq[word] += 1
+    else:
+        freq[word] = 1
+print(freq)
+```
+
+**16. Student Grades Analysis**
+
+```python
+students = {'Alice': [90, 85, 88], 'Bob': [78, 80], 'Carol': []}
+averages = {}
+for student, grades in students.items():
+    if grades:
+        avg = sum(grades) / len(grades)
+        averages[student] = avg
+    else:
+        averages[student] = None  # or 0
+print(averages)
+```

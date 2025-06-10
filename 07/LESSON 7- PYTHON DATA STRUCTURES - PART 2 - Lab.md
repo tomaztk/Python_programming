@@ -122,4 +122,11 @@ Example input:
 sentence = "Python Programming"
 ```
 
+**16. Word Frequency Counter**
 
+Write a function that receives a string as input and returns a dictionary where the keys are words and the values are the number of times each word appears in the string. Ignore case and punctuation. Use a loop to build the dictionary.
+
+
+**17. Student Grades Analyzer**
+
+Given a dictionary where the keys are student names and the values are lists of their grades (integers), write a function to create a new dictionary where each student name maps to their average grade. Use a loop to calculate averages.
