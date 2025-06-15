@@ -142,3 +142,42 @@ print(a[4:1:-1])
 #11c: [5, 4, 3, 2]
 #11d: Error due to invalid slice step
 
+# 12. What is the output of the following code? explain why.
+
+n = 2
+while n < 20:
+    print(n)
+    n *= 2
+    if n > 16: 
+        break
+
+# 12a: 2, 4, 8, 16
+# 12b: 2, 4, 8
+# 12c: 2, 4, 8, 16, 32
+# 12d: Error due to infinite loop
+
+
+# 13. What is the output of the following code? explain why.
+
+for i in range(3):
+    for j in range(2):
+        if i == j:
+            print(i , j)
+
+# 13a: 0, 1
+# 13b: 0, 2, 6
+# 13c: 0, 1, 2
+# 13d: Error due to undefined variable j
+
+# 14. What is the output of the following code? explain why.
+
+for i in range(1, 3):
+    for j in range(2):
+        print(i + j)
+
+# 14a: 1, 2, 2, 3
+# 14b: 1, 2, 3, 4
+# 14c: 1, 2, 3
+# 14d: Error due to invalid range
+
+
