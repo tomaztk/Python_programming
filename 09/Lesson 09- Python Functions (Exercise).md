@@ -114,3 +114,76 @@ Each assignment is designed to reinforce the core concepts covered in **Lesson 8
 **Assignment**: Create a text menu with three options (e.g., greet, add two numbers, quit). Implement each option using a function and use a loop to keep the program running.
 **What we want**: Integrate functions into a user-interactive program and demonstrate modular design.
 
+
+
+
+
+Arbitrary number of arguments
+varying number of arguments can be passed to a function using *args and **kwargs
+
+ *args = allows passing a variable number of positional arguments (non-keyword arguments)
+ 
+ **kwargs = allows passing a variable number of keyword arguments (key-value pairs)
+ 
+ * unpacking operator (can be used to unpack a list or tuple into positional arguments)
+
+```python
+def sum_123(a,b,):
+    return a +b 
+```
+
+```python
+print(sum_123(1,23))
+print(sum_123(1,2,3,4)) # error: sum_123() takes 2 positional arguments but 4 were given
+```
+
+```python
+def sum_all(*args) -> int:
+    """Return the sum of all arguments."""
+    return sum(args)
+```
+
+convention is to use *args for positional arguments but you can use any name, but *args is a common convention
+
+```python
+def sum_all2(*nums) -> int:
+    """Return the sum of all arguments."""
+    return sum(nums)
+
+print(sum_all(1, 2, 3))  
+print(sum_all(1, 2, 3, 4, 5,43,43,34,3,423,423,423423))  
+
+
+print(sum_all2(1, 2, 3))  
+print(sum_all2(1, 2, 3, 4, 5,43,43,34,3,423,423,423))  
+```
+
+
+ **kwargs allows passing a variable number of keyword arguments (key-value pairs)
+
+```python
+def print_address(**kwargs) -> None:
+    """Print the address."""
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+    print(type(kwargs))  # <class 'dict'>, kwargs is a dictionary
+
+print_address(street="Dol 42", city="LJubljana", zip="1000", country="Slovenia")
+```
+
+
+order of arguments in function definition is crucial:
+* 1. positional arguments
+* 2. *args (variable number of positional arguments)
+* 3. keyword arguments (default arguments)
+
+```python
+def shipping_label(*args, **kwargs):
+    pass
+
+print(shipping_label("Alex", "Castro", 
+                     street="Dol 42", 
+                     city="LJubljana", 
+                     zip="1000", 
+                     country="Slovenia"))
+```
