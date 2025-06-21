@@ -137,12 +137,6 @@ df = pd.read_csv("data/students_scores.csv")
 
 ---
 
-
-
-Absolutely! Here's the extended part with support for **reading JSON files using Pandas**, including explanations, example code, and a sample JSON file you can use in lessons or assignments.
-
----
-
 ### 4. **Reading JSON Files with `pd.read_json()`**
 
 ####  What is a JSON File?

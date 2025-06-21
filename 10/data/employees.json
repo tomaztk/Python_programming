@@ -1,5 +1,24 @@
 [
-  {"Name": "Alice", "Department": "HR", "Salary": 50000},
-  {"Name": "Bob", "Department": "Finance", "Salary": 60000},
-  {"Name": "Charlie", "Department": "IT", "Salary": 70000}
+  {"Name": "Ana", "Department": "HR", "Salary": 60000},
+  {"Name": "Boban", "Department": "Finance", "Salary": 60000},
+  {"Name": "Borjan", "Department": "IT", "Salary": 70000},
+  {"Name": "Cvetan", "Department": "Marketing", "Salary": 65000},
+  {"Name": "Dimitra", "Department": "Sales", "Salary": 70000},
+  {"Name": "Elena", "Department": "IT", "Salary": 75000},
+  {"Name": "Filip", "Department": "HR", "Salary": 62000},
+  {"Name": "Goran", "Department": "Finance", "Salary": 68000},
+  {"Name": "Hristina", "Department": "Marketing", "Salary": 64000},
+  {"Name": "Ivan", "Department": "Sales", "Salary": 72000},
+  {"Name": "Jana", "Department": "IT", "Salary": 73000},
+  {"Name": "Kiril", "Department": "HR", "Salary": 61000},
+  {"Name": "Lazar", "Department": "Finance", "Salary": 69000},
+  {"Name": "Mira", "Department": "Marketing", "Salary": 66000},
+  {"Name": "Nikolay", "Department": "Sales", "Salary": 71000},
+  {"Name": "Oleg", "Department": "IT", "Salary": 74000},
+  {"Name": "Petar", "Department": "HR", "Salary": 63000},
+  {"Name": "Rada", "Department": "Finance", "Salary": 67000},
+  {"Name": "Stefan", "Department": "Marketing", "Salary": 68000},
+  {"Name": "Tanya", "Department": "Sales", "Salary": 70000},
+  {"Name": "Viktor", "Department": "IT", "Salary": 72000},
+  {"Name": "Zara", "Department": "HR", "Salary": 64000}
 ]
