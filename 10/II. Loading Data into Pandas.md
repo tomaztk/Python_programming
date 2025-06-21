@@ -1,4 +1,4 @@
-## II. **Loading Data into Pandas**
+## **II. Loading Data into Pandas**
 
 Data analysis often starts with **loading external datasets**—typically stored in files like CSV or Excel. Pandas makes this process very easy and intuitive with built-in functions.
 
