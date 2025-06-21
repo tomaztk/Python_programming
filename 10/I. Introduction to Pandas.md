@@ -137,7 +137,7 @@ While **NumPy** is great for numerical arrays and mathematical operations, it is
 
 
 
-### I.a Introduction to Polars (an alternative to Pandas) **
+### I.II. Introduction to Polars (an alternative to Pandas) **
 
 Introduction to **Polars** – A Fast Modern Alternative to Pandas
 
@@ -269,10 +269,8 @@ df.filter(pl.col("Age") > 28)
 | Ecosystem Maturity | Very mature                   | Rapidly growing                     |
 | Best Use Case      | General-purpose data analysis | Large-scale, high-performance tasks |
 
----
 
-**Tip for Learners**:
-If you're just starting out and learning the basics of data analysis, **Pandas** is the best starting point due to its simplicity and community support. As you progress and work with larger datasets or seek higher performance, learning **Polars** will be a powerful asset.
+
 
 
 
