@@ -1,0 +1,11 @@
+EmployeeID,Name,Department,Gender,Age,Salary,YearsExperience,PerformanceScore,BonusEligible,Location
+101,Alice,HR,Female,29,52000,4,88,Yes,New York
+102,Bob,Finance,Male,34,61000,7,77,No,Chicago
+103,Charlie,IT,Male,41,72000,10,90,Yes,San Francisco
+104,Daisy,Finance,Female,28,59000,3,81,Yes,Boston
+105,Edward,IT,Male,36,73000,9,85,Yes,Chicago
+106,Fiona,HR,Female,26,51000,2,72,No,New York
+107,George,Marketing,Male,30,56000,5,75,No,Los Angeles
+108,Helen,Finance,Female,38,64000,8,93,Yes,Chicago
+109,Ian,Marketing,Male,45,58000,12,65,No,Los Angeles
+110,Jane,IT,Female,32,70000,6,91,Yes,San Francisco
