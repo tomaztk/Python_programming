@@ -1,0 +1,6 @@
+Name,Department,Salary,Experience,Location
+Alice,HR,50000,3,New York
+Bob,Finance,60000,5,Chicago
+Charlie,IT,70000,8,San Francisco
+Daisy,Finance,58000,,Boston
+Edward,IT,72000,7,Chicago
