@@ -1,4 +1,5 @@
 # 1: What is different between the two functions `fact` and `fact2`?
+
 def fact(n):
     if n >= 0 and n <= 1:
         return(n)
@@ -70,6 +71,7 @@ func()
 
 
 # 6. What is the output of the following code? explain why.
+
 b = [1, 2, 3, 4, 5]
 print(b[1:4:2])
 
@@ -134,6 +136,7 @@ print(a[1:4:-1])
 #10d: Error due to invalid slice step
 
 # 11. What is the output of the following code? explain why.
+
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(a[4:1:-1])
 
