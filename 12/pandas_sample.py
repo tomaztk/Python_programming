@@ -1,3 +1,5 @@
+
+'''
 import pandas as pd
 import numpy as np
 
@@ -75,7 +77,7 @@ df_complex = pd.DataFrame({
 df_complex.loc[np.random.choice(df_complex.index, 3), 'Salary'] = np.nan
 df_complex.loc[np.random.choice(df_complex.index, 2), 'Region'] = None
 
-print(df_complex.head())
+# print(df_complex.head())
 
 
 
@@ -93,7 +95,7 @@ def salary_range(x):
     return x.max() - x.min()
 
 
-
+### explain this......
 custom_agg = df_complex.groupby('JobTitle').agg(
     Avg_Salary=('Salary', 'mean'),
     Salary_Range=('Salary', salary_range),
@@ -154,4 +156,31 @@ df_complex['TenureYears'] = (today - df_complex['StartDate']).dt.days / 365
 # print(df_complex.nlargest(5, 'Salary')[['Name', 'Department', 'Salary']])
 # print(df_complex.nsmallest(3, 'BonusPercent')[['Name', 'BonusPercent']])
 
-print(df_complex[df_complex['Name'].str.match(r'^\w{4}$')])
+## explain this regex...blablabla -> add some general instructions for regex
+## Kako nardit...bla bla bla
+# print(df_complex[df_complex['Name'].str.match(r'^\w{4}$')])
+
+
+
+
+import site
+import os
+import sys
+
+
+
+# print(site.getsitepackages())
+# print(site.getusersitepackages())
+'''
+
+
+import pandas as pd 
+import os
+
+print(os.getcwd())
+
+df = pd.read_csv("employee_performance_v2.csv")
+print(df.head())
+
+
+
