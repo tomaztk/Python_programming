@@ -2,6 +2,29 @@
 
 Data aggregation helps condense large datasets into meaningful summaries by computing metrics like totals, averages, counts, medians, etc. It's especially useful in reporting, dashboards, and group-based analysis.
 
+Data:
+
+```python
+import pandas as pd
+
+data = {
+    'EmployeeID': [101, 102, 103, 104, 105, 106, 107],
+    'Name': ['alice johnson', 'Bob Smith', 'CHARLIE Brown', 'david lee', 'Eve Stone', 'Frank King', 'Grace Li'],
+    'Email': [
+        'alice@example.com', 'bob@example.org', 'charlie@example.net',
+        'david@workplace.com', 'eve@example.com', 'frank@company.org', 'grace@office.net'
+    ],
+    'Department': ['HR', 'IT', 'IT', 'Sales', 'HR', 'Sales', 'IT'],
+    'Location': ['NY', 'NY', 'SF', 'NY', 'SF', 'SF', 'NY'],
+    'HireDate': pd.to_datetime(['2020-01-15', '2019-07-10', '2021-03-20', '2022-11-05', '2018-06-25', '2023-09-12', '2020-05-01']),
+    'Salary': [52000, 75000, 82000, 58000, 50000, 60000, 79000],
+    'ExperienceYears': [2, 5, 6, 3, 7, 1, 4],
+    'IsRemote': ['Yes', 'No', 'Yes', 'No', 'Yes', 'No', 'Yes']
+}
+
+df = pd.DataFrame(data)
+```
+
 ---
 
 ###  **Using `groupby()`**
@@ -100,6 +123,26 @@ df.pivot_table(index='Department', values=['Salary', 'ExperienceYears'], aggfunc
 ### **Merging and Joining DataFrames**
 
 Combining multiple datasets is essential when data is spread across sources or tables.
+
+#### **Some sample data**
+
+```python
+import pandas as pd
+
+# Employee information
+df1 = pd.DataFrame({
+    'EmployeeID': [101, 102, 103, 104],
+    'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'Department': ['HR', 'IT', 'Sales', 'HR']
+})
+
+# Performance records
+df2 = pd.DataFrame({
+    'EmployeeID': [102, 103, 104, 105],
+    'PerformanceScore': [88, 92, 79, 85],
+    'ReviewDate': ['2024-06-01', '2024-06-01', '2024-06-01', '2024-06-01']
+})
+```
 
 #### **Basic Merge Example**
 

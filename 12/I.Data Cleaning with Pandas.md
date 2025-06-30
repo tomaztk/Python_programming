@@ -21,7 +21,8 @@ data = {
         'alice@example.com', 'bob@example.com', 'charlie@example.com', 'david@example.com',
         'eva@example.com', 'frank@example.com', 'grace@example.com', 'henry@example.com',
         'ivy@example.com', 'alice@example.com'  # duplicate email
-    ]
+    ],
+    'Country': ['USA', np.nan, np.nan, np.nan, np.nan, 'Slovenia', 'Slovakia', 'Slovenianstan', np.nan,'USA']
 }
 
 df = pd.DataFrame(data)
