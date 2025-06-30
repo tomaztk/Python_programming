@@ -148,13 +148,10 @@ pd.merge(df1, df2, on='EmployeeID', how='inner')
 
 ##  **4. Homework Assignment**
 
-### ** Task:**
-
 Clean and summarize a dataset using Pandas
 
-### **Steps:**
 
-1. Load a dataset (`employee_performance.csv` or similar)
+1. Load a dataset (`employee_performance.csv`)
 2. Identify and fill missing values
 3. Drop duplicate records (if any)
 4. Detect and optionally handle outliers in salary

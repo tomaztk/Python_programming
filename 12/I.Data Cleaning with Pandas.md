@@ -1,6 +1,6 @@
 
 
-## **1. Data Cleaning with Pandas**
+## **I. Data Cleaning with Pandas**
 
 Data cleaning is a critical step in any data analysis or machine learning workflow. It involves detecting and correcting (or removing) corrupt or inaccurate records, missing values, duplicate data, and outliers in a dataset.
 
