@@ -17,6 +17,26 @@
 
 ---
 
+```python
+import pandas as pd
+
+data = [
+    {"OrderID": 1001, "Customer": "Alice", "Region": "East", "Product": "Laptop", "Quantity": 2, "UnitPrice": 900, "OrderDate": "2023-01-15", "SalesRep": "John Doe"},
+    {"OrderID": 1002, "Customer": "Bob", "Region": "West", "Product": "Monitor", "Quantity": 5, "UnitPrice": 200, "OrderDate": "2023-01-18", "SalesRep": "Jane Smith"},
+    {"OrderID": 1003, "Customer": "Charlie", "Region": "East", "Product": "Keyboard", "Quantity": 3, "UnitPrice": 50, "OrderDate": "2023-02-05", "SalesRep": "John Doe"},
+    {"OrderID": 1004, "Customer": "Alice", "Region": "North", "Product": "Laptop", "Quantity": 1, "UnitPrice": 950, "OrderDate": "2023-03-01", "SalesRep": "Amy Adams"},
+    {"OrderID": 1005, "Customer": "David", "Region": "South", "Product": "Mouse", "Quantity": 10, "UnitPrice": 25, "OrderDate": "2023-03-10", "SalesRep": "Jane Smith"},
+    {"OrderID": 1006, "Customer": "Eve", "Region": "West", "Product": "Monitor", "Quantity": 2, "UnitPrice": 210, "OrderDate": "2023-04-02", "SalesRep": "John Doe"},
+    {"OrderID": 1007, "Customer": "Frank", "Region": "East", "Product": "Laptop", "Quantity": 1, "UnitPrice": 1000, "OrderDate": "2023-04-10", "SalesRep": "Amy Adams"},
+    {"OrderID": 1008, "Customer": "Grace", "Region": "North", "Product": "Mouse", "Quantity": 6, "UnitPrice": 30, "OrderDate": "2023-04-22", "SalesRep": "Jane Smith"},
+    {"OrderID": 1009, "Customer": "Heidi", "Region": "South", "Product": "Keyboard", "Quantity": 4, "UnitPrice": 60, "OrderDate": "2023-05-03", "SalesRep": "John Doe"},
+    {"OrderID": 1010, "Customer": "Ivan", "Region": "West", "Product": "Monitor", "Quantity": 3, "UnitPrice": 205, "OrderDate": "2023-05-15", "SalesRep": "Amy Adams"},
+]
+
+df = pd.DataFrame(data)
+```
+
+
 ##  Assignments
 
 1. **Load the dataset into a pandas DataFrame.**
@@ -38,4 +58,16 @@
 17. **Find customers who ordered more than once.**
 18. **Replace 'Monitor' with 'LCD Monitor' in the Product column.**
 19. **Drop the column `OrderID`.**
-20. **Export the final DataFrame to a new CSV file.**
+20. **Convert all Customer names to uppercase.**
+21. **Convert all SalesRep names to lowercase.**
+22. **Concatenate Customer and Region into a new column called CustomerRegion.**
+23. **Check if the product name contains the word "top" (case-insensitive), and create a boolean column ContainsTop.**
+24. **Extract only letters from SalesRep names using regex (remove spaces and non-letters).**
+25. **Create a new column OrderDay to extract the day of the month from OrderDate.**
+26. **Create a new column OrderYear to extract the year from OrderDate.**
+27. **Create a new column FormattedDate that formats the date as "DD-MM-YYYY".**
+28. **Filter and display only the orders made after March 1, 2023.**
+29. **Create pivot table of Total Sales by Region and Product**
+30. **Create pivot table of  Average Unit Price by SalesRep and Product**
+31. **Print table with number of Orders per Month and Region**
+29. **Export the final DataFrame to a new CSV file.**
