@@ -133,3 +133,9 @@ JOIN Customers ON Orders.CustomerID = Customers.CustomerID
 JOIN Products ON Orders.ProductID = Products.ProductID;
 ```
 
+
+
+### **Software needed**
+
+https://sqlitebrowser.org/
+Visual Studio Code
