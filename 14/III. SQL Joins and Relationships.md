@@ -71,7 +71,7 @@ Customers     Orders
       Only IDs present in BOTH → 1, 2
 ```
 
-✅ *Charlie has no orders, so is excluded.*
+*Charlie has no orders, so is excluded.*
 
 ---
 
@@ -107,7 +107,7 @@ Customers     Orders
       All Customers, even if no orders
 ```
 
-✅ *Charlie is included even without matching orders.*
+*Charlie is included even without matching orders.*
 
 ---
 

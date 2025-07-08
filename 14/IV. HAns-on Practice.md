@@ -153,7 +153,7 @@ conn.close()
 
 ---
 
-### **Bonus Task Ideas for Learners**
+### **Bonus Assignments**
 
 1. Get the most recent order for each customer
 2. Count how many customers placed multiple orders
@@ -163,11 +163,5 @@ conn.close()
 
 ---
 
-### Final Tip
-
-If students are unsure where to begin, provide them with a ready-made `.sql` or `.db` file. Or, use shared links to:
-
-* **[SQLite Online](https://sqliteonline.com/)**
-* **[DB-Fiddle with schema preloaded](https://www.db-fiddle.com/)**
 
 
