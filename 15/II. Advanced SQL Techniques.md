@@ -367,6 +367,17 @@ Returns all users, with their orders if any — includes users who haven’t ord
 **Python Use Case:**
 Generating reports for user engagement (e.g., for marketing or email campaigns).
 
+```python
+cursor.execute("""
+    SELECT u.name, o.order_id, o.order_total
+    FROM users u
+    LEFT JOIN orders o ON u.user_id = o.user_id
+""")
+results = cursor.fetchall()
+for row in results:
+    print(row)
+```
+
 ---
 
 #### **Example 6: Aggregated Joins**
@@ -383,4 +394,136 @@ Shows number of orders and total spend per user.
 
 **Python Use Case:**
 Dashboard summary for business stakeholders or automated email personalization.
+
+
+
+
+#### **Example 7: LEFT JOIN – Users with Their Orders (Even if None)**
+
+```sql
+SELECT u.name, o.order_id, o.order_total
+FROM users u
+LEFT JOIN orders o ON u.user_id = o.user_id;
+```
+
+**What it does:**
+Shows all users, even if they **haven’t placed any orders** (`order_id` will be NULL in that case).
+
+**Use Case:** Display all users in an admin report, highlighting inactive ones.
+
+---
+
+#### **Example 8: RIGHT JOIN – Orders and Associated Users (Even if User is Missing)**
+
+> **Note:** Not all databases (e.g., SQLite) support `RIGHT JOIN`. If unsupported, flip tables and use `LEFT JOIN`.
+
+```sql
+SELECT o.order_id, o.order_total, u.name
+FROM orders o
+RIGHT JOIN users u ON o.user_id = u.user_id;
+```
+
+**What it does:**
+Shows all users, with their orders. Effectively same as `LEFT JOIN users → orders`.
+
+**Use Case:** In a report, ensure all users are listed regardless of whether they’ve made purchases.
+
+---
+
+#### **Example 9: FULL OUTER JOIN – All Users and All Orders, Matched if Possible**
+
+```sql
+SELECT u.name, o.order_id, o.order_total
+FROM users u
+FULL OUTER JOIN orders o ON u.user_id = o.user_id;
+```
+
+**What it does:**
+Combines all data from both `users` and `orders`. If there's no match, the unmatched side gets NULL.
+
+**Use Case:** Reconciling data between systems (e.g., CRM vs sales database).
+
+---
+
+#### **Example 10: CROSS JOIN – All Combinations of Users and Products**
+
+```sql
+SELECT u.name, p.product_name
+FROM users u
+CROSS JOIN products p;
+```
+
+**What it does:**
+Generates a combination of every user with every product.
+
+**Use Case:** Simulate "what-if" scenarios (e.g., testing personalized recommendations).
+
+**Warning:** Can grow large fast. `3 users × 5 products = 15 rows`.
+
+---
+
+#### **Example 11: JOIN with Filter – Orders Over \$100 With User Info**
+
+```sql
+SELECT u.name, o.order_id, o.order_total
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+WHERE o.order_total > 100;
+```
+
+**What it does:**
+Returns only users who placed **orders over \$100**, with details.
+
+**Use Case:** Loyalty programs, bonus triggers, or fraud detection.
+
+---
+
+#### **Example 12: Multiple Table JOIN – Full Payment Info with User**
+
+```sql
+SELECT u.name, o.order_id, o.order_total, p.amount, p.payment_date
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+JOIN payments p ON o.order_id = p.order_id;
+```
+
+**What it does:**
+Shows complete transaction records: who placed the order, how much, and when they paid.
+
+**Use Case:** Generating detailed invoices or admin financial reports.
+
+---
+
+#### **Example 13: JOIN with Aggregation – Total Payments Per User**
+
+```sql
+SELECT u.name, SUM(p.amount) AS total_paid
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+JOIN payments p ON o.order_id = p.order_id
+GROUP BY u.name;
+```
+
+**What it does:**
+Aggregates total payments made **per user**.
+
+**Use Case:** Customer lifetime value tracking or financial summary views.
+
+
+
+---
+
+## Summary: JOIN Selection Guide
+
+
+
+| Join Type         | Description                                                        |
+| ----------------- | ------------------------------------------------------------------ |
+| `INNER JOIN`      | Returns only matching rows in both tables                          |
+| `LEFT JOIN`       | All rows from the **left** table + matching from right (if any)    |
+| `RIGHT JOIN`      | All rows from the **right** table + matching from left (if any)    |
+| `FULL OUTER JOIN` | All rows from both tables, matched when possible, `NULL` otherwise |
+| `CROSS JOIN`      | Cartesian product (every row of A paired with every row of B)      |
+
+---
 
