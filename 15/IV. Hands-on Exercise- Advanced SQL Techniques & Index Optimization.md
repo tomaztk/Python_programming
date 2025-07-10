@@ -163,16 +163,5 @@ JOIN payments p ON o.order_id = p.order_id;
 **Explanation:**
 Retrieves the same result using **explicit joins**; `DISTINCT` avoids duplicate names for users with multiple payments.
 
----
 
-### Deliverables
-
-For each task:
-
-* Provide the SQL query (see above)
-* Execute and verify the results
-* Add a **brief explanation or comment** describing:
-
-  * What the query does
-  * Why the technique (subquery, join, index) is effective
 
