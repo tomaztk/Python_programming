@@ -114,7 +114,7 @@ Finds products priced higher than **all** products in the 'Discount' category.
 ```python
 cursor.execute("""
     SELECT product_name FROM products
-    WHERE price > ALL (
+    WHERE price > (
         SELECT price FROM products WHERE category = 'Discount'
     )
 """)
@@ -226,7 +226,7 @@ Rewarding returning customers or tracking engagement.
 ```sql
 SELECT product_name
 FROM products
-WHERE price > ALL (
+WHERE price > (
     SELECT price FROM products WHERE category = 'Accessories'
 );
 ```
@@ -282,7 +282,7 @@ Reconciliation logic or identifying complete transactions for reporting.
 
 ---
 
-### 📌 **Example 11: Subquery in `FROM` Clause — Average Spend per User**
+### **Example 11: Subquery in `FROM` Clause — Average Spend per User**
 
 ```sql
 SELECT name, avg_spent
