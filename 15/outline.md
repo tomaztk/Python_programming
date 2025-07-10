@@ -116,62 +116,11 @@
 
 #### **4. Hands-on Exercise**
 
-* **Goal:** Optimize a provided set of SQL queries.
-* **Tasks:**
-
-  1. Identify bottlenecks using `EXPLAIN`.
-  2. Add indexes where necessary.
-  3. Rewrite queries to use joins instead of subqueries (where optimal).
-  4. Refactor Python code to batch-fetch and paginate large result sets.
-
----
-
-### **New Additional Topics**
-
-#### **5. SQLAlchemy ORM vs Raw SQL for Optimization**
-
-* **Example with SQLAlchemy Query Optimization**:
-
-  ```python
-  session.query(User).filter(User.orders.any(Order.total > 100)).all()
-  ```
-
-  * Compare with raw SQL for performance in profiling.
-
-#### **6. Using Materialized Views and Caching with Python**
-
-* **Materialized View**:
-
-  ```sql
-  CREATE MATERIALIZED VIEW top_customers AS
-  SELECT user_id, SUM(order_total) AS total
-  FROM orders
-  GROUP BY user_id
-  ORDER BY total DESC;
-  ```
-
-  * Refreshing the view in Python:
-
-    ```python
-    cursor.execute("REFRESH MATERIALIZED VIEW top_customers")
-    ```
-
-#### **7. Python Profiling Tools for SQL Performance**
-
-* Using `sqlalchemy.echo`, `time`, or `cProfile` to measure query performance.
-* Integration with APM tools (e.g., Datadog, New Relic).
-
 ---
 
 ### **Homework**
 
 **Assignment:**
 
-* Optimize a set of 3 SQL queries used in a mock Python web application (provided).
-* Include:
 
-  * Before-and-after versions.
-  * EXPLAIN output summary.
-  * Python-side improvements (e.g., batching, caching).
-  * A short write-up on performance gains.
 
