@@ -13,11 +13,25 @@ WHERE o.order_date = (
 """
 
 
-con = sqlite3.connect("lesson15.db")
+query2 = """
+SELECT user_id, name
+FROM users
+WHERE user_id IN (
+    SELECT user_id
+    FROM orders
+    GROUP BY user_id
+    HAVING SUM(order_total) > (
+        SELECT AVG(order_total) FROM orders
+    )
+);
+"""
+
+
+con = sqlite3.connect("lesson15_v1.db")
 cur = con.cursor()
-res = cur.execute(query)
+res = cur.execute(query2)
 df = res.fetchall()
 con.close()
 
-pd_df = pd.DataFrame(df, columns=['Name', 'OrderID', 'OrderDate'])
+pd_df = pd.DataFrame(df, columns=['UserID', 'Name'])
 print(pd_df)
