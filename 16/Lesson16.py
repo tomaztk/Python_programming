@@ -82,3 +82,37 @@ insert_user_safe("Charlie", 40)
 # insert_user_safe("Tom", -45i)
 
 """
+
+
+# Part 6
+
+
+"""
+import sqlite3
+
+def get_users_above_age(min_age):
+    with sqlite3.connect('lesson16.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT * FROM users WHERE age > ?', (min_age,))
+        users = cursor.fetchall()
+    return users
+
+# Example
+print("Users older than 300:", get_users_above_age(300))
+
+"""
+
+
+# Part 7
+
+import sqlite3
+
+def update_user_age(name, new_age):
+    with sqlite3.connect('lesson16.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('UPDATE users SET age = ? WHERE name = ?', (new_age, name))
+        conn.commit()
+    print(f"Updated '{name}' to age {new_age}.")
+
+# Example
+update_user_age("Tom", 290)
