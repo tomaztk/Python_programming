@@ -1,5 +1,5 @@
 ### ORM like  / without typical SQL
-"""
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy import Column, Integer, String
@@ -38,16 +38,17 @@ data = [{'id': u.id, 'name': u.name, 'email': u.email} for u in users_results]
 
 df = pd.DataFrame(data)
 print(df)
-"""
+
 
 ### with just typical SQL
-
+"""
 from sqlalchemy import create_engine, text
 import pandas as pd
 
 engine = create_engine('sqlite:///lesson16.db')
 
 with engine.connect() as conn:
-    result = conn.execute(text("SELECT id, name, email FROM users3"))
+    result = conn.execute(text("SELECT * FROM users3"))
     df = pd.DataFrame(result.mappings().all())   
     print(df)
+"""
