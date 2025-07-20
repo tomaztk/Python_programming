@@ -46,6 +46,7 @@ data = {
 }
 
 df = pd.DataFrame(data)
+df['Price'] = df['Sales'] - df['Expenses']
 ```
 
 ---
