@@ -300,6 +300,20 @@ multi_plot_with_reference(
 | Custom Function          | Reusable Scatter + Reference |
 
 ---
+## Or
+
+## **Summary of Graph Types & Use-Cases**
+
+| Graph Type   | Use Case                        |
+| ------------ | ------------------------------- |
+| Line Plot    | Trends over time                |
+| Scatter Plot | Correlation between variables   |
+| Bar Chart    | Compare categories              |
+| Histogram    | Distribution of a variable      |
+| Box Plot     | Summary statistics and outliers |
+| Pie Chart    | Proportion of categories        |
+
+
 
 ## **Conclusion**
 
