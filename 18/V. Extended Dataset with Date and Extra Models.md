@@ -175,6 +175,33 @@ plt.show()
 ### **10) Correlation Heatmap — Numeric Variables**
 
 ```python
+numeric_df = df.select_dtypes(include='number')
+corr = numeric_df.corr().values
+labels = numeric_df.columns
+
+
+fig, ax = plt.subplots(figsize=(8, 6))
+cax = ax.matshow(corr, cmap='coolwarm')
+fig.colorbar(cax)
+
+
+ax.set_xticks(np.arange(len(labels)))
+ax.set_yticks(np.arange(len(labels)))
+ax.set_xticklabels(labels, rotation=45, ha='left')
+ax.set_yticklabels(labels)
+ 
+
+# Annotate correlation values
+for i in range(len(labels)):
+    for j in range(len(labels)):
+        ax.text(j, i, f"{corr[i, j]:.2f}", va='center', ha='center', color='black')
+plt.title("Correlation Heatmap", pad=20)
+plt.tight_layout()
+plt.show()
+
+# or with seaborn
+
+
 sns.heatmap(df[['Price', 'Sales', 'Rating']].corr(), annot=True, cmap='coolwarm')
 plt.title('Correlation Heatmap')
 plt.show()

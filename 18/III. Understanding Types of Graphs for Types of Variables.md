@@ -150,6 +150,22 @@ plt.show()
 Box plots are excellent for visualizing distribution and outliers per category.
 
 ```python
+types = df['Type'].unique()
+types.sort()
+data_to_plot = [df[df['Type'] == t]['Price'] for t in types]
+
+
+plt.figure(figsize=(8, 6))
+plt.boxplot(data_to_plot, labels=types)
+plt.title("Price Distribution by Vehicle Type")
+plt.xlabel("Type")
+plt.ylabel("Price")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
+# of with seaborn
 import seaborn as sns
 
 sns.boxplot(x='Type', y='Sales', data=df)

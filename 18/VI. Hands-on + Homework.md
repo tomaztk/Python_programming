@@ -143,4 +143,26 @@ plt.show()
 * Create a function similar to `plot_with_reference()` that allows plotting **any two variables** with optional annotations and reference lines.
 * Apply it to your dataset with different pairs of variables.
 
+```python
+fig, ax1 = plt.subplots(figsize=(10, 6))
 
+
+color = 'tab:blue'
+ax1.set_xlabel('Model')
+ax1.set_ylabel('Price', color=color)
+ax1.plot(df['Model'], df['Price'], marker='o', color=color, label='Price')
+ax1.tick_params(axis='y', labelcolor=color)
+ax1.set_xticklabels(df['Model'], rotation=45)
+
+
+ax2 = ax1.twinx()
+color = 'tab:red'
+ax2.set_ylabel('Sales', color=color)
+ax2.plot(df['Model'], df['Sales'], marker='s', color=color, label='Sales')
+ax2.tick_params(axis='y', labelcolor=color)
+
+
+fig.tight_layout()
+plt.title("Price vs Sales by Model")
+plt.show()
+```
