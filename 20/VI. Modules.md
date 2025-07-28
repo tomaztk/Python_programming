@@ -1,6 +1,6 @@
 ## **VI. Modules**
 
---
+
 ### What is a Module?
 
 A **module** is a file containing Python code — variables, functions, classes — that you can **import and reuse** in other Python programs.
@@ -193,13 +193,6 @@ print("Current time:", now.strftime("%Y-%m-%d %H:%M:%S"))
 *  Avoid wildcard imports (`from module import *`)
 *  Use `__name__ == "__main__"` to separate testing from import behavior
 
-
-
-
-
-Absolutely! Understanding **Python environments and module requisites** is crucial for any real-world project — especially when working with external packages and modular code. Below is a complete explanation with hands-on examples.
-
----
 
 ##  **Python Modules and Packages, Requisites, and Environments**
 
