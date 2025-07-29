@@ -85,7 +85,7 @@ finally:
     print("Clean-up: Shutting down safely.")
 ```
 
-➡️ Output:
+Output:
 
 ```
 Starting calculation...
@@ -104,7 +104,7 @@ Clean-up: Shutting down safely.
 
 ---
 
-## 🧪 Demo 4: Cleaning Up a Network Connection (Simulated)
+## Demo 4: Cleaning Up a Network Connection (Simulated)
 
 ```python
 class DummyConnection:
@@ -119,7 +119,7 @@ with DummyConnection() as conn:
     raise RuntimeError("Connection error!")
 ```
 
-➡️ Output:
+Output:
 
 ```
 Opening connection...
