@@ -94,6 +94,10 @@ Encapsulate logic in classes (e.g., scientific calculator, finance apps) with ro
 
 ---
 
+### **3. Logging in Python**
+
+---
+
 ###  **Hands-On Practice Exercise**
 
 ```python
