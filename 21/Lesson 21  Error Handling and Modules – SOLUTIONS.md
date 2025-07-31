@@ -12,6 +12,13 @@ try:
     print("Square:", num ** 2)
 except ValueError:
     print("Invalid input! Please enter a number.")
+    
+    
+ try:
+    #check_age(25)  
+    check_age(-5)  
+except ValueError as e:
+    print("Error:", e)
 ```
 
 **Solution 2**
