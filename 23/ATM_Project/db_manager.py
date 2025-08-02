@@ -63,7 +63,7 @@ class DatabaseManager:
     def get_account_by_client(self, client_id):
         cur = self.conn.execute("SELECT * FROM Accounts WHERE client_id=?", (client_id,))
         return cur.fetchone()
-
+    
     def update_balance(self, account_id, new_balance):
         with self.conn:
             self.conn.execute(

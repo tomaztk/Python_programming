@@ -50,6 +50,7 @@ class ATM:
         print(f"Your balance is: {account[2]:.2f}")
         self.logger.log_action(account[1], "CHECK_BALANCE")
 
+
     def deposit_money(self, account):
         try:
             amount = float(input("Enter amount to deposit: "))
@@ -59,8 +60,12 @@ class ATM:
             self.db.update_balance(account[0], new_balance)
             self.db.add_transaction(account[0], "Deposit", amount, "deposit")
             self.logger.log_action(account[1], "DEPOSIT", amount)
-            print("Deposit successful.")
+            print("Deposit successfully added.")
             account = self.db.get_account_by_client(account[1])
+            
+            new_amount = self.db.check_balance(account)
+            print("Your new balacne is:", new_amount)
+
         except Exception as e:
             self.logger.log_error(str(e))
             print("Error during deposit.")

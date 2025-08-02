@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     # Optional: Add a test client
     if not db.get_client_by_pin("1234"):
-        client_id = db.add_client("John Doe", "1234", "john@example.com")
+        client_id = db.add_client("Eddie Vedder", "1234", "eddie@vedder.com")
         db.add_account(client_id, 500.0, "debit")
 
     client, account = atm.login()
