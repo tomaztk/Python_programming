@@ -1,6 +1,4 @@
 
-# **Lesson 22: Introduction to Object-Oriented Programming (OOP) in Python**
-
 # **I. What is OOP in Python**
 
 

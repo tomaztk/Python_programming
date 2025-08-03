@@ -1,4 +1,4 @@
-## **III. Hands-on Example: Modeling Real-World Objects (ATM)**
+## **III. Hands-on Example: My First ATM Script :)**
 
 ---
 
@@ -19,8 +19,7 @@ class ATM:
     def power_off(self):
         print(f"ATM at {self.location} ({self.bank_name}) is now OFF.")
 
-# Create an ATM
-atm1 = ATM("Main Street", "City Bank")
+atm1 = ATM("Copova ulica, Ljubljana", "NLB")
 atm1.power_on()
 atm1.power_off()
 ```
@@ -28,8 +27,8 @@ atm1.power_off()
 **Output:**
 
 ```
-ATM at Main Street (City Bank) is now ON.
-ATM at Main Street (City Bank) is now OFF.
+ATM at Copova ulica, Ljubljana (NLB) is now ON.
+ATM at Copova ulica, Ljubljana (NLB) is now OFF.
 ```
 
 ---
@@ -55,8 +54,8 @@ class BankAccount:
             self.balance -= amount
             print(f"Withdrew ${amount}. New balance: ${self.balance}")
 
-# Create account and perform transactions
-account1 = BankAccount("John Doe", 500)
+
+account1 = BankAccount("Tomaz K.", 500)
 account1.deposit(200)
 account1.withdraw(100)
 account1.withdraw(700)
@@ -77,10 +76,10 @@ Insufficient funds!
 A **Client** has a **BankAccount** and can interact with an ATM.
 
 ```python
-class Client:
+cclass Client:
     def __init__(self, name, account):
         self.name = name
-        self.account = account  # BankAccount object
+        self.account = account  
     
     def check_balance(self):
         print(f"{self.name}'s current balance: ${self.account.balance}")
@@ -97,17 +96,16 @@ class Client:
         else:
             print("Invalid ATM action.")
 
-# Create bank account
-john_account = BankAccount("John Doe", 1000)
 
-# Create client
-client1 = Client("John Doe", john_account)
+TK_account = BankAccount("SI56 0201 00000 00001230", 1000)
 
-# Create ATM
-atm1 = ATM("Main Street", "City Bank")
+client1 = Client("Tomaz Kastrun", TK_account)
+
+
+atm1 = ATM("NLB Copova, Ljubljana", "NLB Banka")
 atm1.power_on()
 
-# Client uses ATM
+
 client1.use_atm(atm1, "withdraw", 200)
 client1.use_atm(atm1, "deposit", 500)
 client1.use_atm(atm1, "balance")
@@ -118,13 +116,14 @@ atm1.power_off()
 **Output:**
 
 ```
-ATM at Main Street (City Bank) is now ON.
-John Doe is using the ATM at Main Street...
+ATM at NLB Copova, Ljubljana (NLB Banka) is now ON.
+Tomaz Kastrun is using the ATM at NLB Copova, Ljubljana...
 Withdrew $200. New balance: $800
-John Doe is using the ATM at Main Street...
+Tomaz Kastrun is using the ATM at NLB Copova, Ljubljana...
 Deposited $500. New balance: $1300
-John Doe's current balance: $1300
-ATM at Main Street (City Bank) is now OFF.
+Tomaz Kastrun is using the ATM at NLB Copova, Ljubljana...
+Tomaz Kastrun's current balance: $1300
+ATM at NLB Copova, Ljubljana (NLB Banka) is now OFF.
 ```
 
 ---
@@ -134,7 +133,7 @@ ATM at Main Street (City Bank) is now OFF.
 | Concept         | Meaning                 | Example from Bank Story                         |
 | --------------- | ----------------------- | ----------------------------------------------- |
 | **Class**       | Blueprint for objects   | `class BankAccount:`                            |
-| **Object**      | Instance of a class     | `atm1 = ATM("Main Street", "City Bank")`        |
+| **Object**      | Instance of a class     | `atm1 = ATM("NLB Copova, LJubljana", "NLB")`        |
 | **Attribute**   | Variable inside a class | `self.balance`                                  |
 | **Method**      | Function inside a class | `def deposit(self, amount)`                     |
 | **Constructor** | Initializes an object   | `def __init__(self, account_holder, balance=0)` |
