@@ -22,9 +22,9 @@ class ATM:
 
     def main_menu(self, client, account):
         while True:
-            print("\n--- ATM MENU ---")
+            print("\n--- MY PERSONAL ATM MENU ---")
             print("1. Check Balance")
-            print("2. Deposit Money")
+            print("2. Deposit Money (Income)")
             print("3. Withdraw Money")
             print("4. Make Payment")
             print("5. View Statistics")
@@ -63,8 +63,8 @@ class ATM:
             print("Deposit successfully added.")
             account = self.db.get_account_by_client(account[1])
             
-            new_amount = self.db.check_balance(account)
-            print("Your new balacne is:", new_amount)
+            new_amount = self.db.get_account_by_client(account[1])
+            print("Your new balacne is:", new_amount[2])
 
         except Exception as e:
             self.logger.log_error(str(e))

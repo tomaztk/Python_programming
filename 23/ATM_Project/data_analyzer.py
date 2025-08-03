@@ -13,21 +13,42 @@ class DataAnalyzer:
         df["datetime"] = pd.to_datetime(df["datetime"])
         return df
 
-    def plot_balance_over_time(self, account_id):
+    def plot_balance_over_time_old(self, account_id):
         df = self._load_transactions_df(account_id)
         df["balance"] = df["amount"].cumsum()
         plt.figure()
         plt.plot(df["datetime"], df["balance"], marker="o")
         plt.title("Balance Over Time")
         plt.savefig("plots/balance_over_time.png")
+        plt.close()
+
+
+    def plot_balance_over_time(self, account_id):
+        df = self._load_transactions_df(account_id)
+        df["date"] = df["datetime"].dt.date
+        daily_df = df.groupby("date", as_index=False)["amount"].sum()
+        daily_df["balance"] = daily_df["amount"].cumsum()
+        plt.figure(figsize=(10, 6))
+        plt.plot(daily_df["date"], daily_df["balance"], marker="o", linestyle="-", linewidth=2)
+        plt.title("Balance Over Time", fontsize=16)
+        plt.xlabel("Date", fontsize=14)
+        plt.ylabel("Balance", fontsize=14)
+        plt.xticks(rotation=90)
+        plt.grid(True, linestyle="--", alpha=0.6)
+        plt.tight_layout()
+        plt.savefig("plots/balance_over_time.png", dpi=300)
+        plt.close()
+
 
     def plot_payments_by_merchant(self, account_id):
         df = self._load_transactions_df(account_id)
         merchant_totals = df.groupby("merchant")["amount"].sum()
-        plt.figure()
+        plt.figure(figsize=(10, 6))
         merchant_totals.plot(kind="bar")
-        plt.title("Payments by Merchant")
-        plt.savefig("plots/payments_by_merchant.png")
+        plt.title("Payments by Merchant", fontsize=16)
+        plt.grid(True, linestyle="--", alpha=0.6)
+        plt.savefig("plots/payments_by_merchant.png", dpi=300)
+        plt.close()
 
     def print_statistics(self, account_id):
         df = self._load_transactions_df(account_id)
