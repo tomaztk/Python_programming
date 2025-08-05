@@ -381,9 +381,9 @@ print(Item.is_integer(7))   #7.0 = True; 7.5 = False; 7 = True
 
 ```
 
-Difference between static dnd class method:
+Difference between static and class method:
 
-- use static - this should do somethign that has a relationshop with the cluss but not something that must be unique per instance!
-- use class - this should also do something that has a relationshop with the class, but usually, those are used to manipulate different structures of data to instantiate objects, like reading CSV file
+- use static - this should do something that has a relationship with the class but nothing to do that must be unique to the instance
+- use class - this should also do something that has a relationshop with the class, but usually used to manipulate different structures of data to instantiate objects, like reading CSV file
 
 
