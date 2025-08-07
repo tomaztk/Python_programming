@@ -1,3 +1,4 @@
+--- name, surneame, email,.... PIN
 CREATE TABLE IF NOT EXISTS Clients (
     client_id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -6,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Clients (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+-- account -  VISA, DEBIT, MAESTRO, N26, CURVE,...
 CREATE TABLE IF NOT EXISTS Accounts (
     account_id INTEGER PRIMARY KEY AUTOINCREMENT,
     client_id INTEGER NOT NULL,
@@ -14,6 +16,7 @@ CREATE TABLE IF NOT EXISTS Accounts (
     FOREIGN KEY (client_id) REFERENCES Clients(client_id)
 );
 
+-- my transaction table; where I store every trancation
 CREATE TABLE IF NOT EXISTS Transactions (
     transaction_id INTEGER PRIMARY KEY AUTOINCREMENT,
     account_id INTEGER NOT NULL,

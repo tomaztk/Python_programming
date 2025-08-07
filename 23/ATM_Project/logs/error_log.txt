@@ -5,3 +5,4 @@
 2025-08-03 11:28:05.645626 - ERROR: 'DatabaseManager' object has no attribute 'check_balance'
 2025-08-03 11:36:09.035789 - ERROR: database is locked
 2025-08-03 11:36:49.980248 - ERROR: database is locked
+2025-08-07 19:35:35.883634 - ERROR: database is locked

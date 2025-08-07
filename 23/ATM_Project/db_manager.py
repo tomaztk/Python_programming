@@ -8,6 +8,7 @@ class DatabaseManager:
         self.conn = sqlite3.connect(self.db_path)
         self.create_tables()
 
+
     def create_tables(self):
         with self.conn:
             self.conn.execute("""
@@ -64,6 +65,12 @@ class DatabaseManager:
         cur = self.conn.execute("SELECT * FROM Accounts WHERE client_id=?", (client_id,))
         return cur.fetchone()
     
+
+    def get_transactions(self, account_id):
+        cur = self.conn.execute("SELECT * FROM Transactions WHERE account_id=?", (account_id,))
+        return cur.fetchall()
+
+
     def update_balance(self, account_id, new_balance):
         with self.conn:
             self.conn.execute(
@@ -77,7 +84,3 @@ class DatabaseManager:
                 "INSERT INTO Transactions (account_id, merchant, amount, transaction_type) VALUES (?, ?, ?, ?)",
                 (account_id, merchant, amount, transaction_type)
             )
-
-    def get_transactions(self, account_id):
-        cur = self.conn.execute("SELECT * FROM Transactions WHERE account_id=?", (account_id,))
-        return cur.fetchall()

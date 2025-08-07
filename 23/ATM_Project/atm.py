@@ -106,3 +106,5 @@ class ATM:
         self.analyzer.plot_balance_over_time(account[0])
         self.analyzer.plot_payments_by_merchant(account[0])
         print("Statistics & plots generated.")
+
+
