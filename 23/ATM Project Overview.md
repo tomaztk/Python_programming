@@ -199,4 +199,3 @@ Withdrawal successful. New balance: $800
 Transaction saved to database and log file.
 ```
 
-
